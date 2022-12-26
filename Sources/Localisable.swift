@@ -1,11 +1,35 @@
 import Foundation
 
 struct Localisable {
-    @discardableResult init(_ arguments: [Any]) {
-        let url = URL(filePath: FileManager.default.currentDirectoryPath, directoryHint: .isDirectory)
-        
+    static func localise(path: String) -> [[String]] {
+        let url = URL(filePath: path, directoryHint: .isDirectory)
+        let english = url.appending(path: "en.lproj/Localizable.strings", directoryHint: .notDirectory)
         print(url)
-        print(arguments[1])
+        let file = try! String(decoding: Data(contentsOf: english), as: UTF8.self)
+        print(file)
+        
+        return file.lines
+    }
+    
+    private init(_ arguments: [Any]) {
+        
+    }
+}
+
+private extension String {
+    var lines: [[Self]] {
+        trimmingCharacters(in: .whitespacesAndNewlines)
+            .components(separatedBy: "\n")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter {
+                !$0.isEmpty
+            }
+            .filter {
+                $0.first != "/"
+            }
+            .map {
+                $0.components(separatedBy: ".")
+            }
     }
 }
 

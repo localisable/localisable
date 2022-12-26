@@ -1,1 +1,1 @@
-Localisable(CommandLine.arguments)
+Localisable.localise(path: CommandLine.arguments[1])

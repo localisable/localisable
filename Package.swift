@@ -19,6 +19,7 @@ let package = Package(
         .testTarget(
             name: "Tests",
             dependencies: ["Localisable"],
-            path: "Tests")
+            path: "Tests",
+            resources: [.process("Resources/Localizable.strings")])
     ]
 )
