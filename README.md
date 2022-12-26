@@ -3,7 +3,7 @@
 Localise your strings.
 
 ### Parsing
-On root directory run:
+On project root directory run:
 ```bash
-cat Tests/Parser.swift Tests/main.swift | swift -
+cat loSources/Localisable.swift main.swift | swift - [Path to base strings file]
 ```
