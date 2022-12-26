@@ -1,3 +1,3 @@
 # Localisable
 
-A description of this package.
+Localise your strings.
