@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "Localisable",
+    platforms: [
+        .macOS(.v13)
+    ],
     products: [
         .library(
             name: "Localisable",
