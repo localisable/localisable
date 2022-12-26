@@ -20,6 +20,6 @@ let package = Package(
             name: "Tests",
             dependencies: ["Localisable"],
             path: "Tests",
-            resources: [.process("Resources/Localizable.strings")])
+            resources: [.process("Resources")])
     ]
 )
